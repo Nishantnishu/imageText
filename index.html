@@ -15,9 +15,14 @@
             'image4.jpg',
             
            'eng', { logger: m => console.log(m) }
-        ).then(({ data: { text } }) => {
-            console.log(text);
-        })
+        ).then(function(result){
+                    // The result object of a text recognition contains detailed data about all the text
+                    // recognized in the image, words are grouped by arrays etc
+                    console.log(result);
+  console.log(result.text);
+                    // Show recognized text in the browser !
+                    alert(result.text);
+                })
     </script>
 </body>
 
