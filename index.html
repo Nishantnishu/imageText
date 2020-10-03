@@ -12,9 +12,9 @@
 <body>
     <script>
         Tesseract.recognize(
-            'image4.jpg',
+            'image4.jpg'
             
-            { logger: m => console.log(m) }
+           
         ).then(({ data: { text } }) => {
             console.log(text);
         })
