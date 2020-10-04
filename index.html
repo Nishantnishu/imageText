@@ -10,6 +10,8 @@
 </head>
 
 <body>
+    <p>
+        </p>
     <script>
         Tesseract.recognize(
             'image5.png', 
@@ -17,6 +19,7 @@
             { logger: m => console.log(m) },
             {tessjs_create_pdf:"1"}
         ).then(({ data: { text } }) => {
+             document.getElementsByTagName("p")[0].innerHTML=text;
             console.log(text);
         })
     </script>
