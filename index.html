@@ -6,22 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
+    <script src='https://unpkg.com/tesseract.js@v2.0.2/dist/tesseract.min.js'></script>
 </head>
 
 <body>
     <script>
         Tesseract.recognize(
-            'image4.jpg'
-         
-        ).then(function(result){
-                    // The result object of a text recognition contains detailed data about all the text
-                    // recognized in the image, words are grouped by arrays etc
-                    console.log(result);
-  console.log(result.text);
-                    // Show recognized text in the browser !
-                    alert(result.text);
-                })
+            'imagetext.png',
+            'eng',
+            { logger: m => console.log(m) },
+            {tessjs_create_pdf:"1"}
+        ).then(({ data: { text } }) => {
+            console.log(text);
+        })
     </script>
 </body>
 
