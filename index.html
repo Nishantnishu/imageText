@@ -12,10 +12,10 @@
 <body>
     <script>
         Tesseract.recognize(
-            'imagetext.png',
+            'image4.jpg',
             'eng',
             { logger: m => console.log(m) },
-            {'tessjs_create_pdf':"1"}
+            {tessjs_create_pdf:"1"}
         ).then(({ data: { text } }) => {
             console.log(text);
         })
