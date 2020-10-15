@@ -19,7 +19,9 @@
             { logger: m => console.log(m) },
             {tessjs_create_pdf:"1"}
         ).then(({ data: { text } }) => {
+            var txt = text.split('\n')
              document.getElementsByTagName("p")[0].innerHTML=text;
+            console.log(txt)
             console.log(text);
         })
     </script>
